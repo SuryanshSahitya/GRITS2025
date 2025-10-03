@@ -1,0 +1,85 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "1peice"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "autoalighnr"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "visionscource"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Intake"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "2peicenon"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "autoalighnr"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Scource2"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Intake"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "3peice"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "autoalighnL"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "backedup3peice"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "elevatord"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": null,
+  "choreoAuto": false
+}

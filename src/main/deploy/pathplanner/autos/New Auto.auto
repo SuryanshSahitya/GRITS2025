@@ -1,0 +1,61 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "alighn1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "autoalighn"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "scource"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Intake"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Alighn2"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "autoalighn"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": null
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "2.5"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": null,
+  "choreoAuto": false
+}
