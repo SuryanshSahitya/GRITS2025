@@ -523,10 +523,10 @@ public class Robot extends LoggedRobot {
 
         new l3algae(algea, -0.7, 5, elevator1, -11.679, 0);
 
-    Command Positionl21 =
+    Command Positionl2Climb =
 
         // setpoint
-        new l3algae(algea, -0.7, 5, elevator1, -11.679, 0);
+        new l3algae(algea, .0001, .000000001, elevator1, -11.679, 0);
 
     Command hyper =
 
@@ -614,6 +614,8 @@ public class Robot extends LoggedRobot {
                             -joystick5
                                 .customRight()
                                 .getX())))); // Drive counterclockwise with negative X
+
+    joystick5.b().onTrue(drivetrain.runOnce(() -> drivetrain.resetgyro()));
     // (left)
     // Additional joystick bindings for shooter, elevator, etc.
 
@@ -679,7 +681,6 @@ public class Robot extends LoggedRobot {
     //         new ParallelCommandGroup(
     //             shoot.cmd(0.05).onlyWhile(() -> joystick.getRightTriggerAxis() < 0.2)));
 
-    // joystick.x().onTrue(drivetrain.runOnce(() -> drivetrain.resetgyro()));
     // joystick
     //     .back()
     //     .whileTrue(
@@ -1938,6 +1939,7 @@ public class Robot extends LoggedRobot {
     //             elevator1.Motionmagictoggle(0), new AutonElevatorcmd(elevator1, 0, false)));
     // Reset Gyro
     // joystick3.b().whileTrue(drivetrain.runOnce(() -> drivetrain.resetgyro()));
+
     joystick4
         .a()
         .whileTrue(
@@ -1993,16 +1995,25 @@ public class Robot extends LoggedRobot {
     joystick3.rightStick().whileTrue(elevator1.runOnce(() -> elevator1.elevatordown()));
     // Toggle Robot Sate
     joystick3.start().whileTrue(elevator1.runOnce(() -> elevator1.togglesetpoint()));
-
-    joystick3
+    joystick5
         .y()
-        .whileTrue(new ParallelCommandGroup(climb.cmdspeed(1)))
-        .whileFalse(climb.cmdspeed(0));
+        .whileTrue(new ParallelCommandGroup(climb.cmdspeed(1), elevator1.Flipydo(-11.679)))
+        .whileFalse(new SequentialCommandGroup(climb.cmdspeed(0)));
 
-    joystick3
+    joystick5
         .a()
-        .whileTrue(new ParallelCommandGroup(climb.cmdspeed(-1)))
-        .whileFalse(climb.cmdspeed(0));
+        .whileTrue(new ParallelCommandGroup(climb.cmdspeed(-1), elevator1.Flipydo(-11.679)))
+        .whileFalse(new SequentialCommandGroup(climb.cmdspeed(0)));
+
+    // joystick5
+    //     .y()
+    //     .whileTrue(new ParallelCommandGroup(climb.cmdspeed(1)))
+    //     .whileFalse(climb.cmdspeed(0));
+
+    // joystick5
+    //     .a()
+    //     .whileTrue(new ParallelCommandGroup(climb.cmdspeed(-1)))
+    //     .whileFalse(climb.cmdspeed(0));
 
     joystick6.a().whileTrue(drivetrain.sysIdQuasistatic(SysIdRoutine.Direction.kForward));
 
